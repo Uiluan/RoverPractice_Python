@@ -1,0 +1,11 @@
+NORTH = 0
+EAST  = 1
+SOUTH = 2
+WEST  = 3
+
+MOVE_COMMAND = "M"
+
+X_MIN = 0
+X_MAX = 9
+Y_MIN = 0
+Y_MAX = 9
