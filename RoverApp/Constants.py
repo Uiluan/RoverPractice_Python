@@ -4,6 +4,8 @@ SOUTH = 2
 WEST  = 3
 
 MOVE_COMMAND = "M"
+LEFT_COMMAND = "L"
+RIGHT_COMMAND = "R"
 
 X_MIN = 0
 X_MAX = 9

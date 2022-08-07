@@ -14,6 +14,7 @@ class Rover():
             const.WEST: "W"
         } [self.direction]
 
+    # TODO: Can I utilize arrays for this? They will autowrap when reaching boundries
     def __MoveNorth(self):
         if(self.y == const.Y_MAX):
             self.y = const.Y_MIN
@@ -38,8 +39,29 @@ class Rover():
         else:
             self.x -= 1
 
+    def __TurnLeft(self):
+        if(self.direction == const.NORTH):
+            self.direction = const.WEST
+        else:
+            self.direction -= 1
+
+    def __TurnRight(self):
+        if(self.direction == const.WEST):
+            self.direction = const.NORTH
+        else:
+            self.direction += 1
+
+    def __IsMoveCommand(self, command: str) -> bool:
+        return (command.upper() == const.MOVE_COMMAND)
+
+    def __IsLeftCommand(self, command: str) -> bool:
+        return (command.upper() == const.LEFT_COMMAND)
+
+    def __IsRightCommand(self, command: str) -> bool:
+        return (command.upper() == const.RIGHT_COMMAND)
+
     def ExecuteCommand(self, command: str) -> str:
-        if(command == const.MOVE_COMMAND):
+        if self.__IsMoveCommand(command):
             if(self.direction == const.NORTH):
                 self.__MoveNorth()
             elif(self.direction == const.EAST):
@@ -48,5 +70,9 @@ class Rover():
                 self.__MoveSouth()
             elif(self.direction == const.WEST):
                 self.__MoveWest()
+        elif(self.__IsLeftCommand(command)):
+            self.__TurnLeft()
+        elif(self.__IsRightCommand(command)):
+            self.__TurnRight()
         
         return str(self.x) + ":" + str(self.y) + ":" + self.__GetDirectionString()

@@ -50,3 +50,105 @@ def test_ExecuteCommand_StartAt_90E_Given_M_EndsAt_00E():
     actual = rover.ExecuteCommand("M")
     expected = "0:0:E"
     assert actual == expected
+
+def test_ExecuteCommand_StartAt_55N_Given_m_EndsAt_56N():
+    rover = Rover(5, 5, const.NORTH)
+    actual = rover.ExecuteCommand("m")
+    expected = "5:6:N"
+    assert actual == expected
+
+def test_ExecuteCommand_StartAt_55N_Given_L_EndsAt_55W():
+    rover = Rover(5, 5, const.NORTH)
+    actual = rover.ExecuteCommand("L")
+    expected = "5:5:W"
+    assert actual == expected
+
+def test_ExecuteCommand_StartAt_55N_Given_l_EndsAt_55W():
+    rover = Rover(5, 5, const.NORTH)
+    actual = rover.ExecuteCommand("l")
+    expected = "5:5:W"
+    assert actual == expected
+
+def test_ExecuteCommand_StartAt_55E_Given_L_EndsAt_55N():
+    rover = Rover(5, 5, const.EAST)
+    actual = rover.ExecuteCommand("L")
+    expected = "5:5:N"
+    assert actual == expected
+
+def test_ExecuteCommand_StartAt_55E_Given_l_EndsAt_55N():
+    rover = Rover(5, 5, const.EAST)
+    actual = rover.ExecuteCommand("l")
+    expected = "5:5:N"
+    assert actual == expected
+
+def test_ExecuteCommand_StartAt_55S_Given_L_EndsAt_55E():
+    rover = Rover(5, 5, const.SOUTH)
+    actual = rover.ExecuteCommand("L")
+    expected = "5:5:E"
+    assert actual == expected
+
+def test_ExecuteCommand_StartAt_55S_Given_l_EndsAt_55E():
+    rover = Rover(5, 5, const.SOUTH)
+    actual = rover.ExecuteCommand("l")
+    expected = "5:5:E"
+    assert actual == expected
+
+def test_ExecuteCommand_StartAt_55W_Given_L_EndsAt_55S():
+    rover = Rover(5, 5, const.WEST)
+    actual = rover.ExecuteCommand("L")
+    expected = "5:5:S"
+    assert actual == expected
+
+def test_ExecuteCommand_StartAt_55W_Given_l_EndsAt_55S():
+    rover = Rover(5, 5, const.WEST)
+    actual = rover.ExecuteCommand("l")
+    expected = "5:5:S"
+    assert actual == expected
+
+def test_ExecuteCommand_StartAt_55W_Given_R_EndsAt_55N():
+    rover = Rover(5, 5, const.WEST)
+    actual = rover.ExecuteCommand("R")
+    expected = "5:5:N"
+    assert actual == expected
+
+def test_ExecuteCommand_StartAt_55W_Given_r_EndsAt_55N():
+    rover = Rover(5, 5, const.WEST)
+    actual = rover.ExecuteCommand("r")
+    expected = "5:5:N"
+    assert actual == expected
+
+def test_ExecuteCommand_StartAt_55N_Given_R_EndsAt_55E():
+    rover = Rover(5, 5, const.NORTH)
+    actual = rover.ExecuteCommand("R")
+    expected = "5:5:E"
+    assert actual == expected
+
+def test_ExecuteCommand_StartAt_55N_Given_r_EndsAt_55E():
+    rover = Rover(5, 5, const.NORTH)
+    actual = rover.ExecuteCommand("r")
+    expected = "5:5:E"
+    assert actual == expected
+
+def test_ExecuteCommand_StartAt_55E_Given_R_EndsAt_55S():
+    rover = Rover(5, 5, const.EAST)
+    actual = rover.ExecuteCommand("R")
+    expected = "5:5:S"
+    assert actual == expected
+
+def test_ExecuteCommand_StartAt_55W_Given_r_EndsAt_55S():
+    rover = Rover(5, 5, const.EAST)
+    actual = rover.ExecuteCommand("r")
+    expected = "5:5:S"
+    assert actual == expected
+
+def test_ExecuteCommand_StartAt_55S_Given_R_EndsAt_55W():
+    rover = Rover(5, 5, const.SOUTH)
+    actual = rover.ExecuteCommand("R")
+    expected = "5:5:W"
+    assert actual == expected
+
+def test_ExecuteCommand_StartAt_55S_Given_r_EndsAt_55W():
+    rover = Rover(5, 5, const.SOUTH)
+    actual = rover.ExecuteCommand("r")
+    expected = "5:5:W"
+    assert actual == expected
