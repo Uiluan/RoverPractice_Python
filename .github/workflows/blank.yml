@@ -12,12 +12,6 @@ on:
 jobs:
   docker:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        
+    steps:        
       - name: Build and push Docker images
         uses: docker/build-push-action@v3.1.1
-        with:
-          context: /home/runner/work/RoverPractice_Python/RoverPractice_Python
-          file: ./Dockerfile
