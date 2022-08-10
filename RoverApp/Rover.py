@@ -1,6 +1,7 @@
 import RoverApp.Constants as const
 
 class Rover():
+    # TODO: Test for default parameters
     def __init__(self, x: int=const.X_MIN, y:int=const.Y_MIN, direction:int=const.NORTH) -> None:
         self._y = y
         self._x = x
