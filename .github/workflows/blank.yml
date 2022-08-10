@@ -15,5 +15,6 @@ jobs:
     steps:
       - name: Build and push Docker images
         uses: docker/build-push-action@v3.1.1
-        # with:
-          # file: Dockerfile
+        with:
+          context: .
+          file: Dockerfile
