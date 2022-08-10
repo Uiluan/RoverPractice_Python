@@ -1,5 +1,3 @@
-import pytest
-import random
 import RoverApp.Constants as const
 from RoverApp.Rover import Rover
 
@@ -151,4 +149,16 @@ def test_ExecuteCommand_StartAt_55S_Given_r_EndsAt_55W():
     rover = Rover(5, 5, const.SOUTH)
     actual = rover.ExecuteCommand("r")
     expected = "5:5:W"
+    assert actual == expected
+
+def test_ExecuteCommand_StartAt_55N_Given_MM_EndsAt_57N():
+    rover = Rover(5, 5, const.NORTH)
+    actual = rover.ExecuteCommand("MM")
+    expected = "5:7:N"
+    assert actual == expected
+
+def test_ExecuteCommand_StartAt_00E_Given_MMrLlm_EndsAt_21N():
+    rover = Rover(0, 0, const.EAST)
+    actual = rover.ExecuteCommand("MMrLlm")
+    expected = "2:1:N"
     assert actual == expected
